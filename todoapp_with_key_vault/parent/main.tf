@@ -9,11 +9,8 @@ module "resource_group" {
   resource_group_name     = "rg-todoapp2"
   resource_group_location = "centralIndia"
 }
-module "resource_group" {
-  source                  = "../child/azurerm_resource_group"
-  resource_group_name     = "rg-todoapp1"
-  resource_group_location = "centralIndia"
-}
+  
+
 module "virtual_network" {
   depends_on = [module.resource_group]
   source     = "../child/azurerm_virtual_network"
